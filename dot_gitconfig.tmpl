@@ -1,0 +1,41 @@
+[alias]
+  cb = checkout -b
+  cm = commit -sv -m
+  d = diff
+  db = !git branch --merged | egrep -v 'main|master' | xargs git branch -d
+  gl = config --global --list
+  last = log -1 HEAD --stat
+  lgb = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset%n' --abbrev-commit --date=relative --branches
+  ll = log --oneline
+  pf = !git pull && git fetch -p -P
+  rv = remote -v
+  se = !git rev-list --all | xargs git grep -F
+  st = status -sb
+  tm = tag -s -m
+
+[commit]
+  gpgsign = true
+
+[core]
+  excludesfile = {{ .chezmoi.homeDir }}/.gitignore
+
+[gpg]
+  format = ssh
+
+[gpg "ssh"]
+  allowedSignersFile = {{ .chezmoi.homeDir }}/.config/git/allowed_signers
+
+[init]
+  defaultBranch = main
+  templateDir = {{ .chezmoi.homeDir }}/.git-template
+
+[pull]
+  rebase = true
+
+[push]
+  autoSetupRemote = true
+
+[user]
+  name = Amo Chumber
+  email = {{ .email }}
+  signingkey = {{ .chezmoi.homeDir }}/.ssh/id_ed25519.pub
