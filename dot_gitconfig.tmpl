@@ -25,6 +25,11 @@
 [gpg "ssh"]
   allowedSignersFile = {{ .chezmoi.homeDir }}/.config/git/allowed_signers
 
+{{ if eq .work_profile "work" }}
+[includeIf "gitdir:~/mygit/work/"]
+  path = ~/.gitconfig-work
+{{- end }}
+
 [init]
   defaultBranch = main
   templateDir = {{ .chezmoi.homeDir }}/.git-template

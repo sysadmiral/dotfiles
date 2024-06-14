@@ -1,9 +1,13 @@
 {{- $email := promptStringOnce . "email" "Personal email address" -}}
 {{- $work_email := promptStringOnce . "work_email" "Work email address" -}}
+{{- $work_profile_choices := list "personal" "work" -}}
+{{- $work_profile := promptChoice "What profile is this machine" $work_profile_choices -}}
 
 [hooks.read-source-state.pre]
-    command = ".local/share/chezmoi/.install-password-manager.sh"
+  command = ".local/share/chezmoi/.install-password-manager.sh"
 
 [data]
-    email = {{ $email | quote }}
-    work_email = {{ $work_email | quote }}
+  email = {{ $email | quote }}
+  work_email = {{ $work_email | quote }}
+  work_profile = {{ $work_profile | quote }}
+

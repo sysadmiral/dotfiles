@@ -1,0 +1,5 @@
+{{- if eq .work_profile "work" }}
+[user]
+  email = {{ .work_email }}
+  signingkey = {{ .chezmoi.homeDir }}/.ssh/work_id_ed25519.pub
+{{- end }}
