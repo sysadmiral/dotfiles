@@ -1,0 +1,7 @@
+{{- if eq .chezmoi.hostname "penguin" }}
+[container]
+  disabled = true
+{{- end }}
+
+[directory]
+  truncation_symbol = '../'
