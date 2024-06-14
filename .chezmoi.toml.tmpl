@@ -1,8 +1,8 @@
-[hooks.read-source-state.pre]
-    command = ".local/share/chezmoi/.install-password-manager.sh"
-
 {{- $email := promptStringOnce . "email" "Personal email address" -}}
 {{- $work_email := promptStringOnce . "work_email" "Work email address" -}}
+
+[hooks.read-source-state.pre]
+    command = ".local/share/chezmoi/.install-password-manager.sh"
 
 [data]
     email = {{ $email | quote }}
