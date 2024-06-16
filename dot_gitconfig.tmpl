@@ -25,7 +25,7 @@
 [gpg "ssh"]
   allowedSignersFile = {{ .chezmoi.homeDir }}/.config/git/allowed_signers
 
-{{ if eq .work_profile "work" }}
+{{ if eq .work_profile "work" -}}
 [includeIf "gitdir:~/mygit/work/"]
   path = ~/.gitconfig-work
 {{- end }}
