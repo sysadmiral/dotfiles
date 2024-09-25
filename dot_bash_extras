@@ -41,3 +41,30 @@ bind 'set completion-ignore-case on'
 hash chezmoi 2> /dev/null \
   && source <(chezmoi completion bash) \
   || echo "[INFO]: Couldn't find chezmoi on PATH"
+
+pathappend() {
+  for ARG in "$@"
+  do
+    if [[ -d "$ARG" ]] && [[ ":$PATH:" != *":$ARG:"* ]]; then
+        PATH="${PATH:+"$PATH:"}$ARG"
+    fi
+  done
+}
+
+pathprepend() {
+  for ARG in "$@"
+  do
+    if [[ -d "$ARG" ]]  && [[ ":$PATH:" != *":$ARG:"* ]]; then
+        PATH="$ARG${PATH:+":$PATH"}"
+    fi
+  done
+}
+
+export NPM_PACKAGES="${HOME}/.npm-packages"
+export NODE_PATH="$NPM_PACKAGES/lib/node_modules${NODE_PATH:+:$NODE_PATH}"
+pathprepend ${NPM_PACKAGES}/bin
+
+# Unset manpath so we can inherit from /etc/manpath via the `manpath`
+# command
+unset MANPATH  # delete if you already modified MANPATH elsewhere in your config
+export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
