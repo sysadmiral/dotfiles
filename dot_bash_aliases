@@ -11,8 +11,8 @@ alias fullenv='( set -o posix ; set ) | grep -v "__git"'
 alias less='less -Ri'
 
 ### mg - go to mygit dir
-[[ -d "${HOME}/mygit" ]] \
-  && alias mg='cd "${HOME}"/mygit; ls' \
+[[ -d "${HOME}/mygit" ]] && hash tree 2> /dev/null \
+  && alias mg='cd "${HOME}"/mygit; tree -d -L 3' \
   || alias mg='echo "${HOME}"/mygit is not a dir. Set this up first...'
 
 ### netdata - open a netdata tab (if installed)
