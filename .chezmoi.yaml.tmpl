@@ -3,11 +3,13 @@
 {{- $work_profile_choices := list "personal" "work" -}}
 {{- $work_profile := promptChoice "What profile is this machine" $work_profile_choices -}}
 
-[hooks.read-source-state.pre]
-  command = ".local/share/chezmoi/.install-password-manager.sh"
+hooks:
+  read-source-state:
+    pre:
+      command: ".local/share/chezmoi/.install-password-manager.sh"
 
-[data]
-  email = {{ $email | quote }}
-  work_email = {{ $work_email | quote }}
-  work_profile = {{ $work_profile | quote }}
+data:
+  email: {{ $email | quote }}
+  work_email: {{ $work_email | quote }}
+  work_profile: {{ $work_profile | quote }}
 
