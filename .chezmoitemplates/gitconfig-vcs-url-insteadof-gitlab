@@ -1,0 +1,5 @@
+### gitlab - {{ . }}
+[url "gitlab-work:{{ . }}/"]
+    insteadOf = git@gitlab.com:{{ . }}/
+[url "gitlab-work:{{ . }}/"]
+    insteadOf = https://gitlab.com/{{ . }}/

@@ -1,0 +1,5 @@
+### bitbucket - {{ . }}
+[url "bitbucket-work:{{ . }}/"]
+    insteadOf = git@bitbucket.org:{{ . }}/
+[url "bitbucket-work:{{ . }}/"]
+    insteadOf = https://bitbucket.org/{{ . }}/
