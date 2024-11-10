@@ -1,0 +1,7 @@
+Host *
+  ControlMaster auto
+  ControlPath {{ .chezmoi.config.tempDir }}{{ .chezmoi.pathSeparator }}%r@%h:%p
+  ControlPersist 300s
+  IdentitiesOnly yes
+  IdentityFile ~{{ .chezmoi.pathSeparator }}.ssh{{ .chezmoi.pathSeparator }}id_ed25519		
+  User {{ .chezmoi.username }}
