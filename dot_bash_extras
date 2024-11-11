@@ -2,42 +2,6 @@ bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
 bind 'set completion-ignore-case on'
 
-
-#source ~/.local/bin/git-prompt.sh
-#export PROMPT_COMMAND='__git_ps1 "\u@\h:\w" "\\\$ "'
-#export GIT_PS1_SHOWCOLORHINTS=1
-#export GIT_PS1_SHOWDIRTYSTATE=1
-#export GIT_PS1_SHOWSTASHSTATE=1
-#export GIT_PS1_SHOWUNTRACKEDFILES=1
-#export GIT_PS1_SHOWUPSTREAM="auto"
-
-#preexec() {
-#  if [ "UNSET" == "${timer}" ]; then
-#    timer=$SECONDS
-#  else
-#    timer=${timer:-$SECONDS}
-#  fi
-#}
-
-#precmd() {
-#  if [ "UNSET" == "${timer}" ]; then
-#     timer_show="0s"
-#  else
-#    the_seconds=$((SECONDS - timer))
-#    # use format-duration to make time more human readable
-#    timer_show="$(format-duration seconds $the_seconds)"
-#  fi
-#  timer="UNSET"
-#}
-
-#[[ -f "$HOME/.local/bin/bash-preexec.sh" ]] && source "$HOME/.local/bin/bash-preexec.sh"
-
-#if [ "$color_prompt" = yes ]; then
-#    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h [\D{%F %T}]\[\033[00m\] \[\033[01;34m\][last: ${timer_show}] [\w]$(__git_ps1)\[\033[00m\]\$ '
-#else
-#    PS1='${debian_chroot:+($debian_chroot)}\u@\h [\D{%F %T}] [last: ${timer_show}] [\w]$(__git_ps1)\$ '
-#fi
-
 hash chezmoi 2> /dev/null \
   && source <(chezmoi completion bash) \
   || echo "[INFO]: Couldn't find chezmoi on PATH"
@@ -59,6 +23,8 @@ pathprepend() {
     fi
   done
 }
+
+export LC_ALL=en_GB.UTF-8
 
 export NPM_PACKAGES="${HOME}/.npm-packages"
 export NODE_PATH="$NPM_PACKAGES/lib/node_modules${NODE_PATH:+:$NODE_PATH}"
