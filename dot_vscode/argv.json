@@ -17,5 +17,5 @@
 	// Unique id used for correlating crash reports sent from this instance.
 	// Do not edit this value.
 	"crash-reporter-id": "2842ca72-f825-4cd1-a334-6e65ebcbf84f",
-	"password-store": "gnome"
+	"password-store": "gnome-libsecret"
 }
