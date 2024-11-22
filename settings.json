@@ -1,0 +1,44 @@
+{
+    "workbench.colorTheme": "Default Dark Modern",
+    "[dockerfile]": {
+        "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+    },
+    "diffEditor.ignoreTrimWhitespace": false,
+    "diffEditor.renderSideBySide": false,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveMode": "modifications",
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "gitlens.codeLens.enabled": false,
+    "gitlens.defaultTimeFormat": null,
+    "prettier.insertPragma": true,
+    "dev.containers.defaultExtensions": [
+        "eamodio.gitlens",
+        "editorconfig.editorconfig",
+        "esbenp.prettier-vscode"
+    ],
+    "window.menuBarVisibility": "toggle",
+    "workbench.productIconTheme": "material-product-icons",
+    "redhat.telemetry.enabled": false,
+    "docker.languageserver.formatter.ignoreMultilineInstructions": true,
+    "terminal.integrated.scrollback": 100000,
+    "remote.SSH.defaultExtensions": [
+        "googlecloudtools.cloudcode"
+    ],
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "githubPullRequests.pullBranch": "never",
+    "editor.mouseWheelScrollSensitivity": 0.1,
+    "workbench.list.mouseWheelScrollSensitivity": 0.1,
+    "workspacesort.workspaceDirectory": "/home/amo/code-workspaces/",
+    "workbench.startupEditor": "none",
+    "terminal.integrated.gpuAcceleration": "off",
+    "terminal.external.osxExec": "Warp.app",
+    "security.promptForLocalFileProtocolHandling": false,
+    "editor.renderControlCharacters": false,
+    "markdown-preview-enhanced.liveUpdate": true,
+    "markdown-preview-enhanced.enablePreviewZenMode": false,
+    "workbench.iconTheme": "file-icons"
+}
