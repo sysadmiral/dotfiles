@@ -1,0 +1,4 @@
+Host github-work
+  Hostname github.com
+  IdentityFile ~/.ssh/work_id_ed25519
+  UpdateHostKeys yes

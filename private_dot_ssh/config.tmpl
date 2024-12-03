@@ -1,0 +1,28 @@
+{{- if eq .work_profile "work" -}}
+{{ range $i, $e := .vcs.bitbucket.orgs -}}
+{{ if eq $i 0 -}}
+  {{ template "sshconfig-bitbucket-work" }}
+{{ end -}}
+{{ end -}}
+{{ range $i, $e := .vcs.github.orgs -}}
+{{ if eq $i 0 -}}
+  {{ template "sshconfig-github-work" }}
+{{ end -}}
+{{ end -}}
+{{ range $i, $e := .vcs.gitlab.orgs -}}
+{{ if eq $i 0 -}}
+  {{ template "sshconfig-gitlab-work" }}
+{{ end -}}
+{{ end -}}
+{{ end -}}
+
+Host bitbucket.org github.com gitlab.com
+  User git
+
+Host *
+  ControlMaster auto
+  ControlPath {{ .chezmoi.config.tempDir }}/%r@%h:%p
+  ControlPersist 300s
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/id_ed25519
+  User {{ .chezmoi.username }}

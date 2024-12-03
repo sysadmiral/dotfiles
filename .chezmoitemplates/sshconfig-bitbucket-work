@@ -1,0 +1,4 @@
+Host bitbucket-work
+  Hostname bitbucket.org
+  IdentityFile ~/.ssh/work_id_ed25519
+  UpdateHostKeys yes
