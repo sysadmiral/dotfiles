@@ -1,5 +1,5 @@
 {{- if eq .work_profile "work" -}}
-JIRA_API_TOKEN={{ range (onepassword "cztdb74jsxqxacsgboiwifychu" "2pnllttgarhtp2zooiymfqikbe" "my").fields -}}
+KANTATA_API_TOKEN={{ range (onepassword "g4rao4h3b6wotmgxgnjf2rmkim" "2pnllttgarhtp2zooiymfqikbe" "my").fields -}}
 {{   if and (eq .label "password") (eq .purpose "PASSWORD") -}}
 {{     .value | quote   -}}
 {{   end -}}
