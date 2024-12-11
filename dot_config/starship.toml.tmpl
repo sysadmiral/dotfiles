@@ -1,4 +1,7 @@
-{{- if eq .chezmoi.hostname "penguin" }}
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+{{ if eq .chezmoi.hostname "penguin" -}}
 [container]
   disabled = true
 {{- end }}
