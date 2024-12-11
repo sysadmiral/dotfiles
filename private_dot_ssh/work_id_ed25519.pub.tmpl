@@ -1,3 +1,3 @@
 {{- if eq .work_profile "work" }}
-{{ onepasswordRead "op://work/work_id_ed25519/public key" "my" }}
+{{- onepasswordRead "op://work/work_id_ed25519/public key" "my" }} {{ .work_email }}
 {{- end }}
