@@ -2,7 +2,7 @@
   cb = checkout -b
   cm = commit -sv -m
   d = diff
-  db = !git branch --merged | egrep -v 'main|master' | xargs git branch -d
+  db = !git branch --merged | egrep -v 'main|master' && git branch --merged | egrep -v 'main|master' | xargs git branch -d || echo "[info]: no local branches to delete"
   gl = config --global --list
   last = log -1 HEAD --stat
   lgb = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset%n' --abbrev-commit --date=relative --branches
