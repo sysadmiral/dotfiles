@@ -1,1 +1,2 @@
 .config/environment.d/jira_api_token.conf
+.gitignore
