@@ -1,0 +1,13 @@
+# copy this file, uncomment the lines and add any orgs you need per vcs
+
+vcs:
+  bitbucket:
+    orgs:
+  github:
+    orgs:
+      - Cloud-Technology-Solutions
+      - cts-terraform-modules
+      - Qodea
+  gitlab:
+    orgs:
+      - eco-movement
