@@ -40,7 +40,7 @@
     "editor.renderControlCharacters": false,
     "markdown-preview-enhanced.liveUpdate": true,
     "markdown-preview-enhanced.enablePreviewZenMode": false,
-    "workbench.iconTheme": "file-icons",
+    "workbench.iconTheme": "material-icon-theme",
     "peacock.favoriteColors": [
         {
             "name": "Angular Red",
@@ -78,5 +78,7 @@
             "name": "Vue Green",
             "value": "#42b883"
         }
-    ]
+    ],
+    "geminicodeassist.project": "",
+    "cloudcode.duetAI.project": ""
 }
