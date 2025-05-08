@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -eux -o pipefail
+set -euo pipefail
 
 # exit immediately if password-manager-binary is already in $PATH
 hash op 2> /dev/null && exit
