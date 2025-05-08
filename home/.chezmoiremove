@@ -1,2 +1,4 @@
 .config/environment.d/jira_api_token.conf
 .gitignore
+.gitconfig*
+.ssh/work_id_ed25519*

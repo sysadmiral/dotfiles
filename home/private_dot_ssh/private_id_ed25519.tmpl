@@ -1,1 +1,5 @@
-{{ onepasswordRead "op://dotfiles/id_ed25519/private key?ssh-format=openssh" "my" }}
+{{- if .work }}
+{{- onepasswordDocument "sbdxn3cnky6uyh2ogbf6qca2au" "2pnllttgarhtp2zooiymfqikbe" "my" }}
+{{- else if .personal -}}
+{{- onepasswordDocument "o7rmzcop2usnh7iktbjxlmzd4m" "s4mynlr4sj4pxnkfqll4zljo4a" "my" }}
+{{- end -}}

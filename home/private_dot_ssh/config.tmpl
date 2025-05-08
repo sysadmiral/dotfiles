@@ -1,4 +1,4 @@
-{{- if eq .work_profile "work" -}}
+{{- if .work -}}
 {{ range $i, $e := .vcs.bitbucket.orgs -}}
 {{ if eq $i 0 -}}
   {{ template "sshconfig-bitbucket-work" }}

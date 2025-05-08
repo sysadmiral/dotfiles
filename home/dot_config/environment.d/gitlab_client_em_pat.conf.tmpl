@@ -1,4 +1,4 @@
-{{- if eq .work_profile "work" -}}
+{{- if .work -}}
 TF_TOKEN_gitlab_com={{ range (onepassword "vhu36zitpiwjqi5bfhx4e3ecue" "2pnllttgarhtp2zooiymfqikbe" "my").fields -}}
 {{   if and (eq .label "password") (eq .purpose "PASSWORD") -}}
 {{     .value | quote   -}}

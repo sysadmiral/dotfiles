@@ -1,7 +1,30 @@
-{{- $email := promptStringOnce . "email" "Personal email address" -}}
-{{- $work_email := promptStringOnce . "work_email" "Work email address" -}}
-{{- $work_profile_choices := list "personal" "work" -}}
-{{- $work_profile := promptChoice "What profile is this machine" $work_profile_choices -}}
+{{/* boolean feature tags */}}
+{{- $ephemeral := false -}}{{/* true if this machine is ephemeral, e.g. a cloud or VM instance */}}
+{{- $headless := false -}}{{/* true if this machine does not have a screen and keyboard */}}
+{{- $personal := false -}}{{/* true if this machine should have personal secrets */}}
+{{- $work := false -}}{{/* true if this machine is a work machine */}}
+{{- "" -}}
+
+{{- $osID := .chezmoi.os -}}
+{{- if (and (eq .chezmoi.os "linux") (hasKey .chezmoi.osRelease "id")) -}}
+{{-   $osID = printf "%s-%s" .chezmoi.os .chezmoi.osRelease.id -}}
+{{- end -}}
+
+{{/* detect GitHub codespaces, VSCode remote containers, Docker containers, Multipass VMs, and Vagrant boxes */}}
+{{- if or (env "CODESPACES") (env "REMOTE_CONTAINERS_IPC") (eq .chezmoi.username "root" "ubuntu" "vagrant" "vscode") -}}
+{{-   $ephemeral = true -}}
+{{-   $headless = true -}}
+{{- end -}}
+
+{{- $email := promptStringOnce . "email" "Email address" -}}
+{{- $profile_choices := list "personal" "work" -}}
+{{- $profile := promptChoice "What profile is this machine" $profile_choices -}}
+
+{{- if eq $profile "work" -}}
+{{-   $work = true -}}
+{{- else -}}
+{{-   $personal = true -}}
+{{- end -}}
 
 hooks:
   read-source-state:
@@ -10,8 +33,12 @@ hooks:
 
 data:
   email: {{ $email | quote }}
-  work_email: {{ $work_email | quote }}
-  work_profile: {{ $work_profile | quote }}
+  ephemeral: {{ $ephemeral }}
+  headless: {{ $headless }}
+  osid: {{ $osID | quote }}
+  personal: {{ $personal }}
+  profile: {{ $profile | quote }}
+  work: {{ $work }}
 
 github:
   refreshPeriod: 1h
