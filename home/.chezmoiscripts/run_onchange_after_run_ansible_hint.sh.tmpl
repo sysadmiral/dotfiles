@@ -1,0 +1,9 @@
+{{- if (not .ephemeral) -}}
+#!/bin/bash
+
+set -eufo pipefail
+
+echo -e "\n####"
+echo "[INFO]: add ansible command here"
+echo "####"
+{{ end -}}
