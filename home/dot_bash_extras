@@ -1,11 +1,14 @@
+# useful bash history navigation
 bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
 bind 'set completion-ignore-case on'
 
+# add chezmoi completion
 hash chezmoi 2> /dev/null \
   && source <(chezmoi completion bash) \
   || echo "[INFO]: Couldn't find chezmoi on PATH"
 
+# useful function to append to PATH env var
 pathappend() {
   for ARG in "$@"
   do
@@ -15,6 +18,7 @@ pathappend() {
   done
 }
 
+# useful function to prepend to PATH env var
 pathprepend() {
   for ARG in "$@"
   do
@@ -24,7 +28,11 @@ pathprepend() {
   done
 }
 
+# set LOCALE
 export LC_ALL=en_GB.UTF-8
+
+# add ~/.local/bin to PATH
+[[ -d ~/.local/bin ]] && pathprepend $(realpath ~/.local/bin)
 
 export NPM_PACKAGES="${HOME}/.npm-packages"
 export NODE_PATH="$NPM_PACKAGES/lib/node_modules${NODE_PATH:+:$NODE_PATH}"
