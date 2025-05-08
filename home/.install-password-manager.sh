@@ -2,14 +2,13 @@
 
 set -eux -o pipefail
 
-set +x
-
 # exit immediately if password-manager-binary is already in $PATH
 hash op 2> /dev/null && exit
 
 case "$(uname -s)" in
 Darwin)
   # commands to install password-manager-binary on Darwin
+  echo "No Darwin setup steps in 1password-cli install script"
   ;;
 Linux)
   case "$(grep ^ID /etc/os-release | cut -d\= -f2)" in
@@ -30,13 +29,13 @@ Linux)
     sudo apt update && sudo apt install --assume-yes 1password-cli
     ;;
   *)
-    echo "failed to detect Linux distro in 1password install script"
+    echo "failed to detect Linux distro in 1password-cli install script"
     exit 1
     ;;
   esac
   ;;
 *)
-  echo "missing OS in 1password install script"
+  echo "missing OS in 1password-cli install script"
   exit 1
   ;;
 esac
