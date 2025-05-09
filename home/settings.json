@@ -79,5 +79,7 @@
             "value": "#42b883"
         }
     ],
-    "geminicodeassist.project": ""
+    "geminicodeassist.project": "",
+    "ansible.lightspeed.enabled": false,
+    "ansible.lightspeed.suggestions.enabled": false
 }
