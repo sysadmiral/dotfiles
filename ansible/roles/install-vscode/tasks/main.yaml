@@ -1,0 +1,4 @@
+# roles/install-vscode/tasks/main.yaml
+---
+- name: include install-vscode per distro
+  include_tasks: install-vscode-{{ ansible_distribution | lower }}.yaml

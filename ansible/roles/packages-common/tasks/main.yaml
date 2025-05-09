@@ -1,0 +1,16 @@
+# roles/packages-common/tasks/main.yaml
+---
+- name: include packages-common per distro
+  include_tasks: packages-common-{{ ansible_distribution | lower }}.yaml
+
+- name: install common packages
+  ansible.builtin.package:
+    name:
+      - bat
+      - curl
+      - jq
+      - meld
+      - "{{ netcat_package_name }}"
+      - tree
+      - "{{ vim_package_name }}"
+    state: latest

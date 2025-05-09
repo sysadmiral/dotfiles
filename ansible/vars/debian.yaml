@@ -1,0 +1,4 @@
+# vars/debian.yaml
+---
+netcat_package_name: netcat-traditional
+vim_package_name: vim

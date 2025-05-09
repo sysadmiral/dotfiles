@@ -1,0 +1,5 @@
+# vars/main.yaml
+---
+container_dev: 'false'
+gcp_dev: 'false'
+cf_tools: 'false'

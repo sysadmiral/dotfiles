@@ -1,0 +1,16 @@
+# roles/packages-common/tasks/packages-common-debian.yaml
+---
+- name: add backports source
+  ansible.builtin.apt_repository:
+    repo: "deb http://deb.debian.org/debian {{ ansible_distribution_release }}-backports main"
+    state: present
+    filename: "{{ ansible_distribution | lower }}-{{ ansible_distribution_major_version }}-backports"
+
+- name: install git from backports
+  ansible.builtin.apt:
+    name:
+      - git
+      - git-man
+    state: latest
+    default_release: "{{ ansible_distribution_release | lower }}-backports"
+    update_cache: yes
