@@ -37,7 +37,7 @@
   email = {{ .email }}
   signingkey = {{ .chezmoi.homeDir }}/.ssh/id_ed25519.pub
 
-{{- if .work -}}
+{{ if .work -}}
 {{ range .vcs.bitbucket.orgs -}}
   {{ template "gitconfig-vcs-url-insteadof-bitbucket" . }}
 {{ end -}}
@@ -49,7 +49,7 @@
 {{ range .vcs.gitlab.orgs -}}
   {{ template "gitconfig-vcs-url-insteadof-gitlab" . }}
 {{ end -}}
-{{- end }}
+{{- end -}}
 
 # Enforce SSH
 [url "ssh://git@github.com/"]
