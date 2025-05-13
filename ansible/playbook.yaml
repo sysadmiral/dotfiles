@@ -26,3 +26,9 @@
         name: install_vscode
         apply:
           become: true
+
+    - name: Install kubectl
+      ansible.builtin.include_role:
+        name: install_kubectl
+        apply:
+          become: true
