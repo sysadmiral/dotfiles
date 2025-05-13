@@ -20,6 +20,7 @@ Host bitbucket.org github.com gitlab.com
   User git
 
 Host *
+  AddKeysToAgent yes
   ControlMaster auto
   ControlPath {{ .chezmoi.config.tempDir }}/%r@%h:%p
   ControlPersist 300s
