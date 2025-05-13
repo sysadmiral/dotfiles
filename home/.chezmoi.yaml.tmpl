@@ -18,7 +18,7 @@
 
 {{- $email := promptStringOnce . "email" "Email address" -}}
 {{- $profile_choices := list "personal" "work" -}}
-{{- $profile := promptChoice "What profile is this machine" $profile_choices -}}
+{{- $profile := promptChoiceOnce . "profile" "What profile is this machine" $profile_choices -}}
 
 {{- if eq $profile "work" -}}
 {{-   $work = true -}}
