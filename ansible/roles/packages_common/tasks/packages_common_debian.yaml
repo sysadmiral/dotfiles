@@ -1,16 +1,16 @@
-# roles/packages-common/tasks/packages-common-debian.yaml
+# roles/packages_common/tasks/packages_common_debian.yaml
 ---
-- name: add backports source
+- name: Add backports source
   ansible.builtin.apt_repository:
     repo: "deb http://deb.debian.org/debian {{ ansible_distribution_release }}-backports main"
     state: present
     filename: "{{ ansible_distribution | lower }}-{{ ansible_distribution_major_version }}-backports"
 
-- name: install git from backports
+- name: Install git from backports
   ansible.builtin.apt:
     name:
       - git
       - git-man
-    state: latest
+    state: present
     default_release: "{{ ansible_distribution_release | lower }}-backports"
-    update_cache: yes
+    update_cache: true

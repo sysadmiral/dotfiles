@@ -1,4 +1,4 @@
-#inventory.yaml
+# inventory.yaml
 ---
 all:
   children:

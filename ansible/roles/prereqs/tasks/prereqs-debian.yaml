@@ -1,8 +1,0 @@
-# roles/prereqs/tasks/prereqs-debian.yaml
----
-- name: install debian specific prerequisite packages
-  ansible.builtin.package:
-    name:
-      - apt-transport-https
-      - ca-certificates
-    state: latest

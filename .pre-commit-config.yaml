@@ -19,3 +19,11 @@ repos:
     - id: commitlint
       stages: [commit-msg]
       additional_dependencies: ['@commitlint/config-conventional']
+- repo: local
+  hooks:
+    - id: ansible-lint
+      name: ansible-lint
+      files: .*/?/.*\.yaml
+      types: ["yaml"]
+      language: system
+      entry: ansible-lint ./ansible

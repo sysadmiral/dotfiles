@@ -1,28 +1,28 @@
-#playbook.yaml
+# playbook.yaml
 ---
-- hosts: localhost
-
+- name: Setup chromebook
+  hosts: localhost
   tasks:
-    - name: load vars
-      include_vars: main.yaml
+    - name: Load vars
+      ansible.builtin.include_vars: main.yaml
 
-    - name: load distribution vars
-      include_vars: "{{ ansible_distribution | lower }}.yaml"
+    - name: Load distribution vars
+      ansible.builtin.include_vars: "{{ ansible_distribution | lower }}.yaml"
 
-    - name: install pre-requisites
-      include_role:
+    - name: Install pre-requisites
+      ansible.builtin.include_role:
         name: "prereqs"
         apply:
-          become: yes
+          become: true
 
-    - name: install common packages
-      include_role:
-        name: packages-common
+    - name: Install common packages
+      ansible.builtin.include_role:
+        name: packages_common
         apply:
-          become: yes
+          become: true
 
-    - name: install-vscode
-      include_role:
-        name: install-vscode
+    - name: Install vscode
+      ansible.builtin.include_role:
+        name: install_vscode
         apply:
-          become: yes
+          become: true

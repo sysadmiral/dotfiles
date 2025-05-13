@@ -1,9 +1,9 @@
-# roles/packages-common/tasks/main.yaml
+# roles/packages_common/tasks/main.yaml
 ---
-- name: include packages-common per distro
-  include_tasks: packages-common-{{ ansible_distribution | lower }}.yaml
+- name: Include packages_common per distro
+  ansible.builtin.include_tasks: packages_common_{{ ansible_distribution | lower }}.yaml
 
-- name: install common packages
+- name: Install common packages
   ansible.builtin.package:
     name:
       - bat
@@ -13,7 +13,7 @@
       - "{{ netcat_package_name }}"
       - tree
       - "{{ vim_package_name }}"
-    state: latest
+    state: present
 
 - name: Install pipx packages
   vars:

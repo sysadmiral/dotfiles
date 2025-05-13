@@ -1,4 +1,4 @@
 # roles/prereqs/tasks/main.yaml
 ---
-- name: include prereqs per distro
-  include_tasks: "prereqs-{{ ansible_distribution | lower }}.yaml"
+- name: Include prereqs per distro
+  ansible.builtin.include_tasks: "prereqs_{{ ansible_distribution | lower }}.yaml"

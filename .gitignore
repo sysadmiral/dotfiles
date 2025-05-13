@@ -1,2 +1,3 @@
 home/.chezmoidata/
 !**/*-example.yaml
+.ansible/
