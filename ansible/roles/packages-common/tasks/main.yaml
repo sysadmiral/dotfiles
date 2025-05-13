@@ -14,3 +14,16 @@
       - tree
       - "{{ vim_package_name }}"
     state: latest
+
+- name: Install pipx packages
+  vars:
+    ansible_become: false
+    pipx_packages:
+      - ansible-core
+      - ansible-lint
+      - pre-commit
+  community.general.pipx:
+    executable: "/usr/bin/pipx"
+    name: "{{ item }}"
+    state: latest
+  with_items: "{{ pipx_packages }}"
