@@ -27,6 +27,12 @@
         apply:
           become: true
 
+    - name: Install docker engine
+      ansible.builtin.include_role:
+        name: install_docker_engine
+        apply:
+          become: true
+
     - name: Install kubectl
       ansible.builtin.include_role:
         name: install_kubectl

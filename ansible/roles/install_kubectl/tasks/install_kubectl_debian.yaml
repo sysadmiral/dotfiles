@@ -13,13 +13,6 @@
     state: present
     filename: kubernetes
 
-# - name: Prevent vscode installer from adding vscode repo
-#   ansible.builtin.debconf:
-#     name: code
-#     question: code/add-microsoft-repo
-#     value: false
-#     vtype: boolean
-
 - name: Install kubectl
   ansible.builtin.package:
     name:
