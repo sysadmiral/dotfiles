@@ -52,6 +52,8 @@ alias scratch='cd ${HOME}/scratch'
 #   alias ssh=/usr/bin/mosh
 #fi
 
-command -v bat > /dev/null 2>&1 \
-  && alias cat="bat" \
+{{ if eq .osid "linux-debian" -}}
+command -v batcat > /dev/null 2>&1 \
+  && alias cat="batcat" \
   && export BAT_THEME="Solarized (dark)"
+{{- end }}
