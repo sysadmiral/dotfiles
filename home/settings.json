@@ -80,5 +80,6 @@
     ],
     "geminicodeassist.project": "",
     "ansible.lightspeed.enabled": false,
-    "ansible.lightspeed.suggestions.enabled": false
+    "ansible.lightspeed.suggestions.enabled": false,
+    "docker.extension.enableComposeLanguageServer": false
 }
