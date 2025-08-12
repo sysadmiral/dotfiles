@@ -23,7 +23,7 @@
       - ansible-lint
       - pre-commit
   community.general.pipx:
-    executable: "/usr/bin/pipx"
+    executable: "{{ lookup('ansible.builtin.env', 'HOME') }}/.local/bin/pipx"
     name: "{{ item }}"
     state: latest
   with_items: "{{ pipx_packages }}"
