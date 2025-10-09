@@ -17,7 +17,6 @@
         "editorconfig.editorconfig",
         "esbenp.prettier-vscode"
     ],
-    "window.menuBarVisibility": "toggle",
     "workbench.productIconTheme": "material-product-icons",
     "redhat.telemetry.enabled": false,
     "docker.languageserver.formatter.ignoreMultilineInstructions": true,
@@ -81,5 +80,19 @@
     "geminicodeassist.project": "",
     "ansible.lightspeed.enabled": false,
     "ansible.lightspeed.suggestions.enabled": false,
-    "docker.extension.enableComposeLanguageServer": false
+    "docker.extension.enableComposeLanguageServer": false,
+    "[dockercompose]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.autoIndent": "advanced",
+        "editor.quickSuggestions": {
+            "other": true,
+            "comments": false,
+            "strings": true
+        },
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "[github-actions-workflow]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    }
 }
