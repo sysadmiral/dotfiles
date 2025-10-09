@@ -1,5 +1,6 @@
 [alias]
   cb = checkout -b
+  cdb = !git checkout $(git remote show origin | sed -n '/HEAD branch/s/.*: //p')
   cm = commit -sv -m
   d = diff
   db = !git branch --merged | egrep -v 'main|master' && git branch --merged | egrep -v 'main|master' | xargs git branch -d || echo "[info]: no local branches to delete"
